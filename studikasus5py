@@ -1,0 +1,34 @@
+# biaya parkir
+
+def hitung_parkir(jenis, lama_parkir):
+    if jenis == "mobil":
+        tarif = 5000
+    else :
+        tarif = 3000
+    
+    total_biaya = tarif * lama_parkir
+    return total_biaya
+
+while True : 
+    jenis_kendaraan = input("masukkan jenis kendaraan (mobil/motor): ")
+    if jenis_kendaraan not in ("mobil", "motor"):
+        print("kendaraan tidak valid, coba lagi.") 
+        continue  
+
+# jam masuk dan jam keluar
+    jam_masuk = int(input("jam masuk : "))
+    jam_keluar = int(input("jam keluar : "))
+
+# lama parkir
+    lama_parkir = jam_keluar - jam_masuk 
+# biaya parkir
+    biaya_parkir = hitung_parkir(jenis_kendaraan, lama_parkir)
+
+# hasil
+    print ("========PARKIR========")
+    print (f"jenis kendaraan : {jenis_kendaraan}")
+    print (f"jam masuk : {jam_masuk}")
+    print (f"jam keluar : {jam_keluar}")
+    print (f"lama parkir : {lama_parkir} jam")
+    print (f"biaya parkir : Rp{biaya_parkir:,}")
+    break
